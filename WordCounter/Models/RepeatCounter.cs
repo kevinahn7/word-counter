@@ -48,6 +48,18 @@ namespace WordCounter
         {
             return _WordsFromArrayDictionary;
         }
+
+        public int FindTheNumberOfOccurences()
+        {
+            if (GetWordsFromArrayDictionary()[GetTheWord()] >= 1)
+            {
+                return GetWordsFromArrayDictionary()[GetTheWord()];
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
 
     public class Program
@@ -55,7 +67,7 @@ namespace WordCounter
         static void Main(string[] args)
         {
             RepeatCounter game = new RepeatCounter();
-            Console.WriteLine("write words");
+            Console.WriteLine("Write a word");
             game.SetTheArrayOfWords(Console.ReadLine());
             game.SetWordsFromArrayDictionary(game.GetTheArrayOfWords());
             Console.WriteLine(game.GetWordsFromArrayDictionary()["one"]);
