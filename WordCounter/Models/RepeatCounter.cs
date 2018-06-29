@@ -101,15 +101,30 @@ namespace WordCounter
             GetResponse();
         }
 
-        public void PlayGame()
+        public void HandleFirstWord()
         {
             Console.WriteLine("Write a word that you would like to count!");
             CheckIfValidWord();
+        }
+
+        public void HandlePhrase()
+        {
             Console.WriteLine("Write a phrase that you would like to see how many times the first word appears in it!");
             SetTheArrayOfWords(Console.ReadLine());
             SetWordsFromArrayDictionary(GetTheArrayOfWords());
+        }
+
+        public void HandleEndGame()
+        {
             Console.WriteLine(GetTheWord() + " appears exactly " + FindTheNumberOfOccurences() + " time(s)");
             AskIfDone();
+        }
+
+        public void PlayGame()
+        {
+            HandleFirstWord();
+            HandlePhrase();
+            HandleEndGame();
         }
     }
 
