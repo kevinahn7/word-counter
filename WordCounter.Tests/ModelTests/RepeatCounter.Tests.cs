@@ -35,5 +35,14 @@ namespace WordCounter.Tests
             newGame.SetWordsFromArrayDictionary(words);
             Assert.AreEqual(1, newGame.GetWordsFromArrayDictionary()["hello"]);
         }
+
+        [TestMethod]
+        public void GetSetWordsFromArrayDictionaryMultiple_GetsSetsWordsFromArrayDictionaryMultiple_True()
+        {
+            RepeatCounter newGame = new RepeatCounter();
+            string[] words = new string[] { "hello", "nice", "to", "meet", "you", "hello" };
+            newGame.SetWordsFromArrayDictionary(words);
+            Assert.AreEqual(2, newGame.GetWordsFromArrayDictionary()["hello"]);
+        }
     }
 }

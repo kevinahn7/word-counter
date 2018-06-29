@@ -40,7 +40,6 @@ namespace WordCounter
                 else
                 {
                     GetWordsFromArrayDictionary().Add(input[i], 1);
-                    Console.WriteLine("i just added " + input[i]);
                 }
             }
         }
@@ -63,7 +62,6 @@ namespace WordCounter
             Console.WriteLine(game.GetWordsFromArrayDictionary()["two"]);
             Console.WriteLine(game.GetWordsFromArrayDictionary()["three"]);
             Console.WriteLine(game.GetWordsFromArrayDictionary()["four"]);
-            game.SetWordsFromArrayDictionary(game.GetTheArrayOfWords());
             Console.ReadLine();
         }
     }
