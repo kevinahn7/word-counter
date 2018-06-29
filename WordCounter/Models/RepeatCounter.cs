@@ -46,7 +46,16 @@ namespace WordCounter
 
         public void CheckIfValidWord()
         {
-            
+            string input = Console.ReadLine();
+            if (input.Split(" ").Length > 1)
+            {
+                Console.WriteLine("That was not a single word!");
+                PlayGame();
+            }
+            else
+            {
+                SetTheWord(input);
+            }
         }
 
         public Dictionary<string, int> GetWordsFromArrayDictionary()
@@ -77,8 +86,7 @@ namespace WordCounter
             }
             if (responseLower == "n" || responseLower == "no")
             {
-                Console.WriteLine("Okay goodbye!");
-                Console.ReadLine();
+                Console.WriteLine();
             }
             else
             {
@@ -97,7 +105,6 @@ namespace WordCounter
         {
             Console.WriteLine("Write a word that you would like to count!");
             CheckIfValidWord();
-            SetTheWord(Console.ReadLine());
             Console.WriteLine("Write a phrase that you would like to see how many times the first word appears in it!");
             SetTheArrayOfWords(Console.ReadLine());
             SetWordsFromArrayDictionary(GetTheArrayOfWords());
