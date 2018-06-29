@@ -44,6 +44,11 @@ namespace WordCounter
             }
         }
 
+        public void CheckIfValidWord()
+        {
+            
+        }
+
         public Dictionary<string, int> GetWordsFromArrayDictionary()
         {
             return _WordsFromArrayDictionary;
@@ -51,7 +56,7 @@ namespace WordCounter
 
         public int FindTheNumberOfOccurences()
         {
-            if (GetWordsFromArrayDictionary()[GetTheWord()] >= 1)
+            if (GetWordsFromArrayDictionary().ContainsKey(GetTheWord()))
             {
                 return GetWordsFromArrayDictionary()[GetTheWord()];
             }
@@ -67,7 +72,8 @@ namespace WordCounter
             string responseLower = response.ToLower();
             if (responseLower == "y" || responseLower == "yes")
             {
-                Main();
+                GetWordsFromArrayDictionary().Clear();
+                PlayGame();
             }
             if (responseLower == "n" || responseLower == "no")
             {
@@ -86,6 +92,18 @@ namespace WordCounter
             Console.WriteLine("Would you like to play again? [Y/N]");
             GetResponse();
         }
+
+        public void PlayGame()
+        {
+            Console.WriteLine("Write a word that you would like to count!");
+            CheckIfValidWord();
+            SetTheWord(Console.ReadLine());
+            Console.WriteLine("Write a phrase that you would like to see how many times the first word appears in it!");
+            SetTheArrayOfWords(Console.ReadLine());
+            SetWordsFromArrayDictionary(GetTheArrayOfWords());
+            Console.WriteLine(GetTheWord() + " appears exactly " + FindTheNumberOfOccurences() + " time(s)");
+            AskIfDone();
+        }
     }
 
     public class Program
@@ -93,15 +111,8 @@ namespace WordCounter
         static void Main(string[] args)
         {
             RepeatCounter game = new RepeatCounter();
-            Console.WriteLine("Word Counter");
-            Console.WriteLine("Write a word that you would like to count!");
-            game.SetTheWord(Console.ReadLine());
-            Console.WriteLine("Write a phrase that you would like to see how many times the first word appears in it!");
-            game.SetTheArrayOfWords(Console.ReadLine());
-            game.SetWordsFromArrayDictionary(game.GetTheArrayOfWords());
-            Console.WriteLine(game.GetTheWord() + " appears exactly " + game.FindTheNumberOfOccurences() + " time(s)");
-            game.AskIfDone();
-            
+            Console.WriteLine("Word Counter Game");
+            game.PlayGame();
         }
     }
 }
