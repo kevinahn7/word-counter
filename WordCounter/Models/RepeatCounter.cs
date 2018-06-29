@@ -67,13 +67,13 @@ namespace WordCounter
         static void Main(string[] args)
         {
             RepeatCounter game = new RepeatCounter();
-            Console.WriteLine("Write a word");
+            Console.WriteLine("Word Counter");
+            Console.WriteLine("Write a word that you would like to count!");
+            game.SetTheWord(Console.ReadLine());
+            Console.WriteLine("Write a phrase that you would like to see how many times the first word appears in it!");
             game.SetTheArrayOfWords(Console.ReadLine());
             game.SetWordsFromArrayDictionary(game.GetTheArrayOfWords());
-            Console.WriteLine(game.GetWordsFromArrayDictionary()["one"]);
-            Console.WriteLine(game.GetWordsFromArrayDictionary()["two"]);
-            Console.WriteLine(game.GetWordsFromArrayDictionary()["three"]);
-            Console.WriteLine(game.GetWordsFromArrayDictionary()["four"]);
+            Console.WriteLine(game.GetTheWord() + " appears exactly " + game.FindTheNumberOfOccurences() + " time(s)");
             Console.ReadLine();
         }
     }
