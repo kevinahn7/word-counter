@@ -74,5 +74,16 @@ namespace WordCounter.Tests
             newGame.SetWordsFromArrayDictionary(words);
             Assert.AreEqual(2, newGame.FindTheNumberOfOccurences());
         }
+
+        [TestMethod]
+        public void GetNumberOfOccurences_ReturnZeroForNoOccurences_True()
+        {
+            RepeatCounter newGame = new RepeatCounter();
+            string word = "bobby";
+            newGame.SetTheWord(word);
+            string[] words = new string[] { "hello", "nice", "to", "meet", "you", "hello" };
+            newGame.SetWordsFromArrayDictionary(words);
+            Assert.AreEqual(0, newGame.FindTheNumberOfOccurences());
+        }
     }
 }
