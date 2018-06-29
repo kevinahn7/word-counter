@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCounter", "WordCounter\WordCounter.csproj", "{47CEE771-BF0E-4685-85B5-BD4562A745E6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCounter.Tests", "WordCounter.Tests\WordCounter.Tests.csproj", "{CEBF67D6-CE65-4AD0-98CB-93BAE31294A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{47CEE771-BF0E-4685-85B5-BD4562A745E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47CEE771-BF0E-4685-85B5-BD4562A745E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47CEE771-BF0E-4685-85B5-BD4562A745E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEBF67D6-CE65-4AD0-98CB-93BAE31294A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEBF67D6-CE65-4AD0-98CB-93BAE31294A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEBF67D6-CE65-4AD0-98CB-93BAE31294A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEBF67D6-CE65-4AD0-98CB-93BAE31294A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

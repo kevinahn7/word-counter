@@ -2,7 +2,14 @@
 
 namespace WordCounter
 {
-    class Program
+    public class CountWords
+    {
+
+    }
+
+
+
+    public class Program
     {
         static void Main(string[] args)
         {
