@@ -21,7 +21,7 @@ namespace WordCounter
 
         public void SetTheArrayOfWords(string input)
         {
-            _arrayOfWords = input.Split(" ");
+            _arrayOfWords = input.ToLower().Split(" ");
         }
 
         public string[] GetTheArrayOfWords()
