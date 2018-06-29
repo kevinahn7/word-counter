@@ -23,7 +23,7 @@ namespace WordCounter.Tests
             RepeatCounter newGame = new RepeatCounter();
             string word = "hello";
             newGame.SetTheWord(word);
-            Assert.AreEqual(word, newGame.GetTheWord());
+            Assert.AreNotEqual("goodbye", newGame.GetTheWord());
         }
 
         [TestMethod]

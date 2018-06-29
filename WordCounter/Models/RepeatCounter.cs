@@ -60,6 +60,32 @@ namespace WordCounter
                 return 0;
             }
         }
+
+        public void GetResponse()
+        {
+            string response = Console.ReadLine();
+            string responseLower = response.ToLower();
+            if (responseLower == "y" || responseLower == "yes")
+            {
+                Main();
+            }
+            if (responseLower == "n" || responseLower == "no")
+            {
+                Console.WriteLine("Okay goodbye!");
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine("That was not a valid response");
+                AskIfDone();
+            }
+        }
+
+        public void AskIfDone()
+        {
+            Console.WriteLine("Would you like to play again? [Y/N]");
+            GetResponse();
+        }
     }
 
     public class Program
@@ -74,7 +100,8 @@ namespace WordCounter
             game.SetTheArrayOfWords(Console.ReadLine());
             game.SetWordsFromArrayDictionary(game.GetTheArrayOfWords());
             Console.WriteLine(game.GetTheWord() + " appears exactly " + game.FindTheNumberOfOccurences() + " time(s)");
-            Console.ReadLine();
+            game.AskIfDone();
+            
         }
     }
 }
